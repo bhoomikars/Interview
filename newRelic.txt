@@ -1,0 +1,69 @@
+
+
+
+10 customers :
+
+if i am customer
+i'll have list of uls on top of this URL we should do an health check
+and get notification when url is down
+
+
+health check:
+and then send an alert:
+
+
+1. ping on the ulr : every 5seconds:
+pros:
+somehwere we are goign to get notified there is some delay in the notification
+we are pinging the healthCheck URL
+
+cons:
+notification is missed for a timeFrame
+
+
+Scalebale, available, latency : 100ms
+
+APIs:
+
+1. customer want to onboard to our service they should give there serviceHealthCheckURL
+2. customer should provide signoff for the delay in the notification
+3. when the health check fails we can send the alert
+
+
+APIS:
+
+valdiateCustomer(Customer customerInfo);
+onboardCustomer(Customer customerInfo, ServiceInfo serviceInfo)
+
+internal: 
+pingAPI(ServiceInfo serviceInfo): Response 200OK, 400, 500 status send notification
+
+alert(Notification, customerInfo): triggerAlert
+
+
+
+while (ture) {
+
+}
+
+
+DateModelling:
+
+Customer:
+notification: id, Destionation()
+ServiceInfo: url, delay, get, headerValidations
+
+
+String id;
+
+
+queue<>[1(5), 2(2)]
+
+1AM
+
+1.05AM -> dequeue -> call the ping service
+1.10AM -> put it to queue
+
+
+
+
