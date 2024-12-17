@@ -1,10 +1,13 @@
 
-
+dsa: https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/0
+Input: arr[] = [-1, 2, -3], k = -2, using prefix sum 
+internal DS of thread
+questions on executor service
 
 10 customers :
 
 if i am customer
-i'll have list of uls on top of this URL we should do an health check
+i'll have list of urls on top of this URL we should do an health check
 and get notification when url is down
 
 
@@ -41,7 +44,7 @@ pingAPI(ServiceInfo serviceInfo): Response 200OK, 400, 500 status send notificat
 alert(Notification, customerInfo): triggerAlert
 
 
-
+event-loop
 while (ture) {
 
 }
