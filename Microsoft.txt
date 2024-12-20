@@ -1,4 +1,4 @@
-1. https://leetcode.com/problems/kth-largest-element-in-an-array/ : variation of this expected to be solved in Red-black-tree/AVL
+1. https://leetcode.com/problems/kth-largest-element-in-an-array/ : variation of this expected to be solved in Red-black-tree/AVL : log(n) is expected
 2. Linked List : modifyList
 given : a->b->c->d->null
 o/p : a->d->b->c->null
