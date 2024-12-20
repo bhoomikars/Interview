@@ -4,3 +4,44 @@ same ditto
 
 Tekion: https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/
 
+intuit : https://leetcode.com/problems/asteroid-collision/description/
+
+DSA :
+
+Gooking for the concepts :
+Sliding window
+2 pointers
+merge sort
+greedy : most asked 
+Binary search : varaition based on the search space, rotated sorted array, peak(monotonically increasing or decreasing)
+Heap : PriorityQueue : kth largest or smallest , 
+balancing the PQ finding the median prolem : https://leetcode.com/problems/find-median-from-data-stream/description/?envType=study-plan-v2&envId=top-interview-150 (asked in Google)
+Interval problems 
+Meeting room problems: https://www.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1
+LinkedList: handling prev, temp node without losing the refference
+BS: all the problems mentioned in the checkList
+https://leetcode.com/problems/maximum-width-of-binary-tree/description/
+TreeMap, TreeSet:(using comparators, Map.Entry): sorting list based overriding the comparator
+CRUD on BST and LinkedList
+RedBlackTree / AVL Tree : for balacing to avoid skew tree
+BFS, DFS, graphs on Tree : all the problems mentioned in the checkList
+DP: single Dimention / multi 
+reccursion
+
+
+Note :
+
+DP:
+find all the base cases
+memoization
+edge case handling AIOE
+knapsack is frequently asked :
+https://leetcode.com/problems/longest-common-subsequence/description/
+
+LeetCode:
+
+Solving all the problems with deepeer understanding and revising with anki flash card: https://apps.ankiweb.net/
+
+https://leetcode.com/studyplan/top-interview-150/ all the problems take equal importance
+https://leetcode.com/problem-list/xo2bgr0r/ 
+
