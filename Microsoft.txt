@@ -1,0 +1,15 @@
+1. https://leetcode.com/problems/kth-largest-element-in-an-array/ : variation of this expected to be solved in Red-black-tree/AVL
+2. Linked List : modifyList
+given : a->b->c->d->null
+o/p : a->d->b->c->null
+LLD:
+
+3. lld of paymentSystem:
+focused on : SOLID, inheritance 
+given credit and paypal write validate, processPayment and refund payment
+
+4.HLD + Behaviour 
+design of subscription sharing : focus on components, APIs, modeling 
+
+
+
