@@ -1,0 +1,162 @@
+
+1. Handing the orderStatus in MutiThreaded senario getting hold of multiThreading
+
+Question: Peer to Peer Parcel Delivery System (like Dunzo)
+
+Description
+Implement a Peer-to-Peer Delivery System that can be used to deliver a parcel from one customer to another. Below are the expected features of the system.
+
+Problem Statement:
+The system should be able to onboard new customers and drivers.
+The list of items that can be delivered is preconfigured in the system and is fixed.
+Customers should be able to place an order for the delivery of a parcel and also be able to cancel it. 
+One driver can pickup only one order at a time.
+Orders should be auto-assigned to drivers based on availability. Even If no driver is available, the system should accept the order and assign it to a driver when the driver becomes free. The number of ongoing orders can exceed the number of drivers.
+Once an order is assigned to a driver, the driver should be able to pick up the order and also mark the order as delivered after delivery. 
+If no driver picks up the order within 60 seconds of its creation, the order should be canceled. Regardless of whether an order has been assigned to a driver or not, if no driver picks it up within 60 seconds of order creation, the order should be canceled.
+The system should be able to show the status of orders and drivers.
+Notify the customer and drivers through email and phone for order updates. For this exercise, write a class that represents a vendor providing the email or SMS service and just print the log indicating that the vendor has processed the request
+Canceled orders shouldn’t be assigned to the driver. If an assigned order gets canceled the driver shouldn’t be able to pick up the order, the driver should be available for other orders. 
+Once a driver picks up an order the order cannot be canceled by the user nor system.
+Assume driver is available 24*7. Ignore the travel time. 
+Ensure application is thread safe and all concurrency scenarios. 
+
+Bonus
+Customers should be able to rate the driver after delivery. (1-5)
+Dashboard to show top drivers based on different strategy no of orders, rating. 
+
+Sample Test cases:
+The input/output need not be in the same format this is for explaining the expected functionality
+
+i: input
+o: output
+n: notification
+
+i: onboard customer -> tom, aa@gmail.com, 123456789 , address1
+o: welcome tom!
+i: onboard customer -> paul, bb@gmail.com, 987654321 , address2
+o: welcome paul!
+i: onboard driver-> driver1
+o: welcome driver1!
+i: driver status -> driver1
+o: idle
+i: Place order -> from:tom, item1, to:paul
+o: order is placed. Order id : order123
+n: to tom -> order is placed by you Order id : order123
+n: to paul -> order is placed for you Order id : order123
+n: to driver1 -> order123 is assigned to you.
+n: to tom, paul -> order is assigned to a driver, driver details : driver1
+i: order pickup -> driver1, order123
+o: order123 is picked up by the driver1.
+n: to tom,paul -> order123 is picked up by the driver1.
+i: order status -> order123
+o: order details -> order is in transit. Driver details: driver1.
+i: Place order -> from:paul, item2, to:tom
+o: order is placed. Order id : order124
+n: to paul -> order is placed by you Order id : order124
+n: to tom -> order is placed for you Order id : order124
+i: order status -> order124
+o: order 124 is created. Waiting for driver availability.
+i: onboard driver-> driver2
+o: welcome driver2!
+n: to driver2 -> order124 is assigned to you.
+n: to tom, paul -> order124 is assigned to a driver, driver details : driver1
+
+After 60 seconds of order124 creation
+n: to tom, paul -> order124 is canceled due to driver unavailability. 
+i: order pickup -> driver2, order124
+o: order cannot be picked up. Order124 is canceled.
+i: order delivered -> driver1, order123
+
+
+
+ 
+     
+
+
+
+Time: 120 mins
+
+Guidelines
+
+
+You are allowed to access the internet only for syntax purposes.
+You are free to use any language of your choice.
+Do not use any external libraries. All of the code should be your own.
+Implement the code using only in-memory data structures or basic file handling. The use of databases is not allowed.
+Do not create any UI for the application.
+Write a driver class for demo purpose which will execute all the commands at one place in the code.Create the sample data yourself in the main driver program itself. 
+Make sure that you can execute your code and show that it is working.
+Please prioritize code compilation, execution and completion.
+Make sure that code is functionally correct. Code should handle edge cases properly and fail gracefully with proper response. Add suitable exceptions.
+Please focus on the Bonus requirement only after ensuring the required features are complete and demoable. The bonus portion would not be evaluated if any of the required functionality is missing.	
+Code should be modular, have correct abstractions, Separation of concern and readable.
+Code should easily accommodate new requirements with minimal changes.
+Code should be easily testable.
+
+
+import P2PSystem
+
+class ScenarioClass(object):
+	"""
+	Here we will write down all scenatios one by one which we can later execute
+	This class is created just for YOUR REFERENCE on how to write down all scenarios
+
+	THIS IS A PSEUDO CODE 
+
+	Not all scenarios are required to be implemented but atleast basic ones
+
+	"""
+	def _init_(self):
+        self.system = P2PSystem()
+
+	def create_customer(name, email, phone):
+		self.system.create_customer(name, email, phone)
+
+	def create_driver(name, email, phone):
+		self.system.create_driver(name, email, phone)
+
+	def print_list_of_items():
+		print(self.system.get_list_of_items())
+
+	def place_prder():
+		customer = self.system.create_customer(name, email, phone)
+		self.system.place_order(customer)
+
+	def scenario_one_customer_one_driver_two_orders():
+		# One customer places two orders quickly one after the other
+		# There is only one driver in the system
+		# The only driver should deliver both the orders one by one.
+		# write the code simulating this scenario here
+
+	def scenario_order_placed_but_no_driver_for_immediate_assignment():
+		# write the code simulating this scenario here
+
+	def scenario_multiple_pickups_per_driver():
+		customer1 = self.system.create_customer(name, email, phone)
+		customer2 = self.system.create_customer(name2, email2, phone2)
+
+		driver1 = self.system.create_driver(dname, demail, dphone)
+
+		customer1.place_order()
+		customer2.place_order()
+
+		# order assignment happens in background
+
+		driver1.pickup_order()
+		driver1.pickup_order()
+
+	def driver_picks_and_delivers_order_after_some_delay():
+		# write the code simulating this scenario here
+
+	def order_placed_but_no_pickup_in_60_seconds():
+		# write the code simulating this scenario here
+
+	def show_orders():
+		# write the code simulating this scenario here
+
+	def scenario_cancelled_order_pickup_attempt():
+		# write the code simulating this scenario here
+
+	def scenario_cancelling_a_picked_up_order():
+		# write the code simulating this scenario here
