@@ -8,7 +8,7 @@ intuit : https://leetcode.com/problems/asteroid-collision/description/
 
 DSA :
 
-Gooking for the concepts :
+Grookking for the concepts :
 Sliding window
 2 pointers
 merge sort
