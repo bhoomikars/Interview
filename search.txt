@@ -1,0 +1,63 @@
+
+search Engine:
+
+item-10
+
+Nfrs:
+
+sclablity : load : 1M -> 10M 
+availablity: 99.9%
+consitency: 90%
+maintainable/robust: 
+latency : 100ms
+
+
+Function:
+
+api's
+
+0. basic Search
+1. filtering 
+2. pagination : pageLimit
+3. like -> elastic serach 
+4. suggestion
+
+
+/search
+Item:
+id;
+price;
+quantity;
+
+Catergory:
+
+id;
+categoryName;
+
+Nosql :
+
+documentDb: cosmos, Mongo
+
+PartionKey: CatergoryId
+Catergory:
+[{
+item-1
+}, {
+item-2
+}]
+
+pub
+sub
+
+dataLake: 
+
+Implemenation of elastic serach:
+inventory -> publish -> kafka <- listnerService -> update its dataLake 
+elstic APIs <- 
+
+
+Redis Cache :
+
+how my cache layer should be update -> 
+dataBase then cache
+caching policy : LRU
